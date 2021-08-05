@@ -38,7 +38,33 @@
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="https://noutegnelionel.github.io/" />
 <link rel="icon" href="images/favicon2.jpg" sizes="32x32" type="image/jpg">
+<script>	  
+document.addEventListener('DOMContentLoaded', function () {
 
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+	</script>
 <!-- End Jekyll SEO tag -->
 </head>
 <body>
@@ -48,12 +74,12 @@
 			    <script type = "text/javascript" src="particles.js"></script>
 			    <script  type = "text/javascript" src="app.js"></script> 
 	         <div class="hero-head">
-<nav class="navbar container" role=navigation>
+<nav  class="navbar-menu" id="navMenu">
 		<div class="navbar-brand">
 		  <a class="navbar-item" href="/">
 			<strong>Lionel</strong>
 		  </a>
-			<div role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" >
+			<div role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
 			  <span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
